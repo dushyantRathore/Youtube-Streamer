@@ -6,6 +6,7 @@ import urllib2
 import requests
 from prettytable import PrettyTable
 import sys
+import os
 
 class color:
    PURPLE = '\033[95m'
@@ -69,7 +70,7 @@ def display(x):
 
     video_url = "https://www.youtube.com" + str(ref[int(choice) - 1])
 
-    webbrowser.open(video_url)
+    os.system("mpv " + video_url)
 
 
 def main():
