@@ -1,0 +1,80 @@
+#!/usr/bin/python
+
+import webbrowser
+from bs4 import BeautifulSoup
+import urllib2
+import requests
+from prettytable import PrettyTable
+import sys
+
+class color:
+   PURPLE = '\033[95m'
+   CYAN = '\033[96m'
+   DARKCYAN = '\033[36m'
+   BLUE = '\033[94m'
+   GREEN = '\033[92m'
+   YELLOW = '\033[93m'
+   RED = '\033[91m'
+   BOLD = '\033[1m'
+   UNDERLINE = '\033[4m'
+   END = '\033[0m'
+
+
+def get_input():
+    """Gets the input from user and formats it."""
+    try:
+        query = sys.argv[1:]
+        movie_name = ' '.join(query[0:])
+        return movie_name
+    except Exception as e:
+        print e
+        exit()
+    return query
+
+
+def display(x):
+    query = x.lower()
+    quoted_query = urllib2.quote(query)
+
+    url = "https://www.youtube.com/results?search_query=" + quoted_query
+
+    # add header
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'}
+
+    request = urllib2.Request(url, headers=headers)
+    data_file = urllib2.urlopen(request)
+    data_html = data_file.read()
+    data_file.close()
+
+    soup = BeautifulSoup(data_html, 'html.parser')
+
+    title = []
+    ref = []
+
+    for h3 in soup.find_all("h3", attrs={"class":"yt-lockup-title"}):
+        title.append(h3.find('a').contents[0])
+        ref.append(h3.find('a')['href'])
+
+    sequence = ["S.No", "Title"]
+
+    t = PrettyTable(sequence)
+
+    for i in range(0, len(title)):
+        t.add_row([i+1, title[i]])
+
+    print t
+
+    choice = raw_input(color.CYAN + color.BOLD + "\nEnter your choice (numerical) : " + color.END)
+
+    video_url = "https://www.youtube.com" + str(ref[int(choice) - 1])
+
+    webbrowser.open(video_url)
+
+
+def main():
+    x = get_input()
+    display(x)
+
+if __name__ == "__main__":
+    main()
