@@ -70,7 +70,7 @@ def display(x):
 
     video_url = "https://www.youtube.com" + str(ref[int(choice) - 1])
 
-    os.system("mpv " + video_url)
+    os.system("vlc " + video_url)
 
 
 def main():
