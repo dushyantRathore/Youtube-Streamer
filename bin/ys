@@ -70,7 +70,7 @@ def display(x):
 
         choice = raw_input(color.CYAN + color.BOLD + "\nEnter your choice (numerical) : " + color.END)
 
-        if int(choice) >=0 and int(choice) <= len(title):
+        if int(choice) >=1 and int(choice) <= len(title):
             video_url = "https://www.youtube.com" + str(ref[int(choice) - 1])
             os.system("vlc " + video_url)
         else:
