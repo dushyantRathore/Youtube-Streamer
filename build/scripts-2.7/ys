@@ -1,12 +1,11 @@
 #!/usr/bin/python
 
-import webbrowser
 from bs4 import BeautifulSoup
 import urllib2
-import requests
 from prettytable import PrettyTable
 import sys
 import os
+
 
 class color:
    PURPLE = '\033[95m'
@@ -64,13 +63,23 @@ def display(x):
     for i in range(0, len(title)):
         t.add_row([i+1, title[i]])
 
-    print t
+    if len(title) != 0:
+        print color.BOLD + color.CYAN + "\nResults : " + color.END
 
-    choice = raw_input(color.CYAN + color.BOLD + "\nEnter your choice (numerical) : " + color.END)
+        print t
 
-    video_url = "https://www.youtube.com" + str(ref[int(choice) - 1])
+        choice = raw_input(color.CYAN + color.BOLD + "\nEnter your choice (numerical) : " + color.END)
 
-    os.system("vlc " + video_url)
+        if int(choice) >=0 and int(choice) <= len(title):
+            video_url = "https://www.youtube.com" + str(ref[int(choice) - 1])
+            os.system("vlc " + video_url)
+        else:
+            print "Invalid entry."
+            quit()
+
+    else:
+        a = raw_input(color.BOLD + color.CYAN + "Sorry, no rasults found." + color.END)
+        quit()
 
 
 def main():
