@@ -5,8 +5,8 @@ from setuptools import setup
 setup(
     name='youtube-streamer',
     version='1.0.1',
-    description='Stream videos on Youtube',
-    long_description='This python package streams videos on youtube based on user\'s query.',
+    description='Stream youtube videos',
+    long_description='This python package streams youtube videos based on user\'s query.',
     author='Dushyant Rathore',
     license='MIT',
     classifiers=[
