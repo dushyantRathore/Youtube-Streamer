@@ -78,7 +78,7 @@ def display(x):
             quit()
 
     else:
-        a = raw_input(color.BOLD + color.CYAN + "Sorry, no rasults found." + color.END)
+        a = raw_input(color.BOLD + color.CYAN + "Sorry, no results found." + color.END)
         quit()
 
 
