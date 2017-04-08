@@ -5,7 +5,7 @@ Searches for the youtube video and streams it instantly.
 
 # Installation
 ```
-$ pip install ys
+$ pip install youtube-streamer
 ```
 
 # Usage
