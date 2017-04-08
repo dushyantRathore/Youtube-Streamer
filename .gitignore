@@ -10,4 +10,5 @@ src/*.egg-info
 lib
 lib64
 ys.egg-info
+youtube_streamer.egg-info
 .idea
