@@ -1,5 +1,13 @@
 *.pyc
-pyenv*/*
-*.egg-info/
-dist/*
-setup.cfg
+.installed.cfg
+bin
+develop-eggs
+dist
+downloads
+eggs
+parts
+src/*.egg-info
+lib
+lib64
+ys.egg-info
+.idea
