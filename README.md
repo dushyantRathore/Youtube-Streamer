@@ -8,9 +8,6 @@ Searches for the youtube video and streams it instantly.
 $ pip install ys
 ```
 
-# Screenshots
-
-
 # Usage
 Query for the video:
 ```
@@ -20,6 +17,11 @@ $ ys [Video/Keyword]
 ```
 $ ys shape of you
 ```
+
+# Screenshots
+![alt tag](https://github.com/dushyantRathore/Youtube-Streamer/blob/master/screenshots/1.png)
+![alt tag](https://github.com/dushyantRathore/Youtube-Streamer/blob/master/screenshots/2.png)
+
 
 # Video Demo
 
