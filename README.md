@@ -25,7 +25,7 @@ $ ys shape of you
 
 # Video Demo
 
-[![Demo](https://www.youtube.com/watch?v=KX4ez2TU0mk)
+[![Demo](https://i.ytimg.com/vi/KX4ez2TU0mk/2.jpg?time=1491617596404)](https://www.youtube.com/watch?v=KX4ez2TU0mk)
 
 # Requirements
 
