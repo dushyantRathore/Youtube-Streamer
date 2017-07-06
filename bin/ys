@@ -5,7 +5,9 @@ import urllib2
 from prettytable import PrettyTable
 import sys
 import os
-
+from urlparse import urlparse
+import requests
+import urllib
 
 class color:
    PURPLE = '\033[95m'
@@ -72,7 +74,10 @@ def display(x):
 
         if int(choice) >=1 and int(choice) <= len(title):
             video_url = "https://www.youtube.com" + str(ref[int(choice) - 1])
+            # video_title = str(title[int(choice) - 1]) + str(".mp3")
+
             os.system("vlc " + video_url)
+
         else:
             print "Invalid entry."
             quit()
