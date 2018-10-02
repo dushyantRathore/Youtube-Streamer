@@ -1,6 +1,6 @@
 # Youtube-Streamer
 
-Searches for the youtube video and streams it instantly.
+Search for youtube videos and stream them instantly from the terminal.
 
 
 # Installation
